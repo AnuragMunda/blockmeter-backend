@@ -12,3 +12,17 @@ export interface GasPriceData {
     estimatedFee: number;
   }>;
 }
+
+export interface GasPriceHistory {
+  candles: Array<{
+    gasPrice: {
+      open: number;
+      close: number;
+      low: number;
+      high: number;
+    },
+    avgGas: number;
+    timestamp: string;
+    samples: number;
+  }>;
+}
