@@ -45,7 +45,7 @@ export class GasService {
     return gasPriceData.data as GasPriceData;
   }
 
-  async getGasPriceHistory(_chainId: string): Promise<GasPriceHistory> {
+  async getGasPriceHistory(_chainId: number): Promise<GasPriceHistory> {
     const owracleApiKey = process.env.OWRACLE_API_KEY;
 
     if (!owracleApiKey) {
@@ -80,9 +80,12 @@ export class GasService {
     }
   }
 
-  @Cron('*/30 * * * *') // Every 30 minutes
-  async scheduleGasPriceHistoryUpdate() {
-    const response = await this.getGasPriceHistory('1'); // Example for Ethereum mainnet
-    console.log(response);
-  }
+  // @Cron('*/30 * * * *') // Every 30 minutes
+  // async scheduleGasPriceHistoryUpdate() {
+  //   if (this.chainId === null) {
+  //     console.log('Chain ID is not set. Skipping gas history update.');
+  //     return; // Skip the cron job if chainId is not set
+  //   }
+  //   await this.getGasPriceHistory(this.chainId); // Example for Ethereum mainnet
+  // }
 }
