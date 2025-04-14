@@ -17,7 +17,7 @@ export class EventsGateway implements OnModuleInit {
   constructor(
     @Inject(forwardRef(() => GasService))
     private readonly gasService: GasService,
-  ) { }
+  ) {}
 
   @WebSocketServer()
   server: Server;

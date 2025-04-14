@@ -20,7 +20,7 @@ export interface GasPriceHistory {
       close: number;
       low: number;
       high: number;
-    },
+    };
     avgGas: number;
     timestamp: string;
     samples: number;

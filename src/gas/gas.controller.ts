@@ -4,7 +4,7 @@ import { GasPriceData, GasPriceHistory } from './interfaces/gas.interface';
 
 @Controller('gas-price')
 export class GasController {
-  constructor(private readonly gasService: GasService) { }
+  constructor(private readonly gasService: GasService) {}
 
   @Get(':chainId')
   getGasPrice(@Param('chainId') chainId: number): Promise<GasPriceData> {
@@ -17,7 +17,7 @@ export class GasController {
 
   @Get('/history/:chainId')
   getGasPriceHistory(
-    @Param('chainId') chainId: string,
+    @Param('chainId') chainId: number,
   ): Promise<GasPriceHistory> {
     if (!chainId) {
       throw new Error('Chain ID is required');
