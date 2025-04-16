@@ -10,7 +10,7 @@ import { GasService } from 'src/gas/gas.service';
 
 @WebSocketGateway({
   cors: {
-    origin: '*',
+    origin: process.env.FRONTEND_URL,
   },
 })
 export class EventsGateway implements OnModuleInit {
