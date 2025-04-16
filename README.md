@@ -3,7 +3,6 @@
 
 ## 📁 `backend/README.md`
 
-```md
 # 🔧 Gas Fee Analyzer Backend (NestJS)
 
 This is the **backend API and WebSocket server** for the Gas Fee Analyzer.  
